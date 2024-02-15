@@ -81,19 +81,22 @@ function App() {
         return staticElement;
       });
 
-      const data = await fetch("http://localhost:8000/api/createForm", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          author: "himanshu",
-          body: `  <div className="flex flex-col gap-2">
+      const data = await fetch(
+        "https://himanshu-rana-xcelpros-jnfb.vercel.app/api/createForm",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            author: "himanshu",
+            body: `  <div className="flex flex-col gap-2">
           ${htmlNeed}
           </div>`,
-          date: new Date(),
-        }),
-      });
+            date: new Date(),
+          }),
+        }
+      );
       const json = await data.json();
       setId(json[0]._id);
       console.log(json);

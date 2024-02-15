@@ -13,7 +13,9 @@ function Form() {
 
   const getForm = async (id) => {
     try {
-      const data = await fetch(`http://localhost:8000/?id=${id}`);
+      const data = await fetch(
+        `https://himanshu-rana-xcelpros-jnfb.vercel.app/?id=${id}`
+      );
       const json = await data.json();
       console.log(json);
       setFormFromBackend([json.data.body]);
